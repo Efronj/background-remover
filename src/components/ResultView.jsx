@@ -83,16 +83,16 @@ const ResultView = ({ images, onReset }) => {
             <div className="result-layout">
 
                 {/* Main Image Area */}
-                <div className="glass-panel result-image-pane" style={{ position: 'relative', overflow: 'hidden', minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="glass-panel result-image-pane" style={{ position: 'relative', overflow: 'hidden', minHeight: '70vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}>
                     {/* Background Layer (applies to the result) */}
-                    <div style={{ position: 'absolute', inset: 0, zIndex: 0, transition: 'all 0.3s', ...backgrounds.find(b => b.id === selectedBg)?.style }}></div>
+                    <div style={{ position: 'absolute', inset: 0, zIndex: 0, transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', ...backgrounds.find(b => b.id === selectedBg)?.style }}></div>
 
-                    <div className="before-after-wrapper" style={{ position: 'relative', zIndex: 10, width: '100%', height: '100%', padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', background: 'transparent', boxShadow: 'none' }}>
-                        <div style={{ width: '100%', maxWidth: 'max-content', maxHeight: '100%', borderRadius: '0.5rem', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--card-border)' }}>
+                    <div className="before-after-wrapper" style={{ position: 'relative', zIndex: 10, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
+                        <div style={{ width: '100%', maxWidth: '800px', maxHeight: '100%', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
                             <ReactBeforeSliderComponent
                                 firstImage={{ imageUrl: originalImageUrl }}
                                 secondImage={{ imageUrl: resultImageUrl }}
-                                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                                style={{ width: '100%', height: 'auto', display: 'block' }}
                             />
                         </div>
                     </div>
